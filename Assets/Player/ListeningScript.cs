@@ -10,6 +10,7 @@ public class ListeningScript : MonoBehaviour
 
     [SerializeField] LayerMask raycastLayer;
     [SerializeField] Transform cam;
+    [SerializeField] AudioListener mainListener;
 
     bool listening = false;
     bool wasListening = false;
@@ -32,7 +33,11 @@ public class ListeningScript : MonoBehaviour
 
                     listening = true;
                     TellEnemiesThatWeAreListening(true);
-                    Debug.Log("Started Listening");
+                    mainListener.enabled = false;
+                    //Debug.Log("Started Listening");
+
+                    //Push the pressing - This is maybe not really performant ... let's see!
+                    hit.collider.gameObject.GetComponent<ButtonScript>().PushPressing();
                 }
             }
         }
@@ -57,7 +62,9 @@ public class ListeningScript : MonoBehaviour
 
             listening = false;
             TellEnemiesThatWeAreListening(false);
-            Debug.Log("Stopped listening");
+            //Debug.Log("Stopped listening");
+
+            mainListener.enabled = true;
         }
     }
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128598492675921788}
   - component: {fileID: 4876666878158261023}
+  - component: {fileID: 2750823899327273653}
   m_Layer: 0
   m_Name: Button Container
   m_TagString: Button
@@ -45,6 +46,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.49534607, z: 1}
   m_Center: {x: 6.31, y: 6.3476725, z: 0}
+--- !u!114 &2750823899327273653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4469112351308989536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873b098895de1f3448d5c900fb86fb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioListener: {fileID: 0}
+  render: {fileID: 4278290674990827589}
+  on: {fileID: 2100000, guid: 5c3ec3aeb2187204a97274e80d3a802c, type: 2}
+  off: {fileID: 2100000, guid: a519423d9cdaf6647b6f1b1b1d320263, type: 2}
 --- !u!1001 &3815478997832098812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,11 +149,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1129496810705857465, guid: 619a17f63b259ec4ab40d3ab2f3bc518,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a519423d9cdaf6647b6f1b1b1d320263, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 619a17f63b259ec4ab40d3ab2f3bc518, type: 3}
 --- !u!4 &3709264682847274007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 619a17f63b259ec4ab40d3ab2f3bc518,
+    type: 3}
+  m_PrefabInstance: {fileID: 3815478997832098812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4278290674990827589 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1129496810705857465, guid: 619a17f63b259ec4ab40d3ab2f3bc518,
     type: 3}
   m_PrefabInstance: {fileID: 3815478997832098812}
   m_PrefabAsset: {fileID: 0}

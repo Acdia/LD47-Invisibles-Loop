@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CmdTable\ButtonScript.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\Player\ListeningScript.cs" />
     <Compile Include="Assets\Player\MainMovement.cs" />
