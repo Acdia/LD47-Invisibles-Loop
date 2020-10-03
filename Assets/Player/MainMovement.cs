@@ -58,8 +58,8 @@ public class MainMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        float x = Input.GetAxis("Horizontal") * movSpeed * Time.deltaTime;
-        float y = Input.GetAxis("Vertical") * movSpeed * Time.deltaTime;
+        float x = Input.GetAxisRaw("Horizontal") * movSpeed * Time.deltaTime;
+        float y = Input.GetAxisRaw("Vertical") * movSpeed * Time.deltaTime;
 
         rb.AddRelativeForce(x, -gravityAdder * Time.deltaTime, y, ForceMode.VelocityChange);
 
