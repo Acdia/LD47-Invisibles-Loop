@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,5 +10,18 @@ public class GameManager : MonoBehaviour
     {
 
         UI.SetActive(true);
+        Invoke("NewScene", 5f);
+    }
+
+    void NewScene()
+    {
+
+        SceneManager.LoadScene(0);
+    }
+
+    public void Win()
+    {
+
+        Invoke("NewScene", 8f);
     }
 }

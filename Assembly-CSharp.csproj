@@ -67,6 +67,7 @@
     <Compile Include="Assets\EMP Devices\Command Class.cs" />
     <Compile Include="Assets\EMP Devices\EMPCommandPushScript.cs" />
     <Compile Include="Assets\EMP Devices\EMPScript.cs" />
+    <Compile Include="Assets\EMPLauncher.cs" />
     <Compile Include="Assets\Enemy\EnemyNavigation.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\EnemyAttack.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Assets\Player\EMPConfigScript.cs" />
     <Compile Include="Assets\Player\ListeningScript.cs" />
     <Compile Include="Assets\Player\MainMovement.cs" />
+    <Compile Include="Assets\Spinner.cs" />
+    <Compile Include="Assets\StartManager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

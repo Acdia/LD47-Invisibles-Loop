@@ -26,6 +26,9 @@ public class MainMovement : MonoBehaviour
     void Start()
     {
 
+        //Set the volume
+        AudioListener.volume = PlayerPrefs.GetFloat("Volume", 1f);
+
         rb = GetComponent<Rigidbody>();
 
         Cursor.lockState = CursorLockMode.Locked;
