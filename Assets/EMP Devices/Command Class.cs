@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class CommandClass
+﻿public class CommandClass
 {
 
     public EMPScript EMP;
@@ -21,7 +19,7 @@ public class CommandClass
     public bool isAnswer = false;
     public int questionNumber = -1;
 
-    string[] ExecuteCommand()
+    public string[] ExecuteCommand()
     {
 
         executing = true;
@@ -32,8 +30,19 @@ public class CommandClass
             if(isAnswer)
             {
 
+                if(EMP.CheckLastCommand(questionNumber))
+                {
 
+                    return positiveActions;
+                }
+                else
+                {
+
+                    return new string[] { "command not found" };
+                }
             }
+
+            return positiveActions;
         }
         else
         {
