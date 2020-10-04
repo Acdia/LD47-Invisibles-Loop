@@ -886,4 +886,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu Scene.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Megaport/Desktop/Unity/LD47/Builds/LD47.exe
+  playerPath: C:/Users/Megaport/Desktop/Unity/LD47/Build/Invisibles' Loop Win/Invisibles'
+    Loop.exe

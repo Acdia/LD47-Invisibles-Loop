@@ -6,6 +6,13 @@ public class StartManager : MonoBehaviour
 
     [SerializeField] GameObject det;
 
+    private void Start()
+    {
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void ShowDetails()
     {
 

@@ -464,7 +464,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8cf957d8e3fa0a74ab79b8bf105eec2b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.209
+  m_Volume: 0.116
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2449,16 +2449,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You don't know how it happened but you found yourself it this round "loop".
+  m_Text: You don't know how it happened but you found yourself in this round "loop".
     There are two enemies walking in the outer ring (and also in the middle if you've
     enabled it) and really would like to meet you. You however have other plans and
     try to activate the 4 EMPs from their consoles. They are at the outer ring. While
     doing this try to avoid the enemies. Since they are invisible you have to trust
     in the red sensors attached in each corridor. They send their signals to the
     table in the middle. The four outer buttons are used to listen to the sensors
-    in the ring, the inner ones for the paths leading to the middle. After every
-    EMP is ready, just press the big red button and all your enemies will shutdown,
-    restart, shutdown, restart, ... - forever!
+    in the ring, the inner ones for the paths leading to the middle. Every enemy
+    has an individual sound. After every EMP is ready, just press the big red button
+    and all your enemies will shutdown, restart, shutdown, restart, ... in a loop
+    - forever!
 --- !u!222 &1717274574
 CanvasRenderer:
   m_ObjectHideFlags: 0
