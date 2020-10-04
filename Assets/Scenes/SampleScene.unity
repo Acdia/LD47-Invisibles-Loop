@@ -2819,7 +2819,7 @@ GameObject:
   - component: {fileID: 361614480}
   - component: {fileID: 361614479}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Hint Sheet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

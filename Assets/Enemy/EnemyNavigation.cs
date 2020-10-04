@@ -16,12 +16,15 @@ public class EnemyNavigation : MonoBehaviour
 
     [Space]
 
+    [SerializeField] float turnAroundChance = 0.4f;
     [SerializeField] float maxWaitTime = 20f;
     [SerializeField] int maxSteps = 10;
     [SerializeField] float crossChance = 0.35f;
     [SerializeField] float maxSpeed = 15f;
 
+    Vector3[] dontUseThese = new Vector3[2];
     Transform currentDestination;
+
     bool doingStuff = false;
     int stepsLeft = 0;
     bool resting = true;
@@ -130,23 +133,57 @@ public class EnemyNavigation : MonoBehaviour
             {
 
                 CrossWalk();
+                currentSpeed /= 3f;
                 return;
             }
         }
 
-        Collider[] colls = Physics.OverlapSphere(transform.position, 85f, navLayer);  //85 makes sure we get only the points nearby
+        Collider[] colls = Physics.OverlapSphere(transform.position, 90f, navLayer);  //85 makes sure we get only the points nearby
         Collider chosenOne;
+
+        bool acceptLastDestination = false;
+        if(Random.Range(0f, 1f) < turnAroundChance)
+        {
+
+            acceptLastDestination = true;
+        }
 
         do
         {
-            
-            chosenOne = colls[Random.Range(0, colls.Length)];
-        } while (currentDestination && chosenOne.transform == currentDestination && colls.Length > 1);
 
+
+            chosenOne = colls[Random.Range(0, colls.Length)];
+        } while (CheckContaining(chosenOne.transform.position) && !acceptLastDestination);
+
+
+        Debug.Log(colls.Length);
 
         currentDestination = chosenOne.transform;
+        if(dontUseThese[0] != null)
+        {
+
+            dontUseThese[1] = dontUseThese[0];
+        }
+
+        dontUseThese[0] = chosenOne.transform.position;
 
         stepsLeft--;
+    }
+
+    bool CheckContaining(Vector3 toCheckFor)
+    {
+  
+        foreach(Vector3 v in dontUseThese)
+        {
+
+            if(v != null && v == toCheckFor)
+            {
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void CrossWalk()

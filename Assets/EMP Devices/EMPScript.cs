@@ -9,6 +9,11 @@ public class EMPScript : MonoBehaviour
 
     [Space]
 
+    public bool readyToStart = false;
+    [SerializeField] int numToFinish;
+
+    [Space]
+
     int lastCommand = -1;
 
     [SerializeField] Text console;
@@ -75,6 +80,13 @@ public class EMPScript : MonoBehaviour
             //Looking at each command
             if(singleCommand.command == command)
             {
+
+                //Check if we finished this terminal
+                if(singleCommand.identifierNumber == numToFinish)
+                {
+
+                    readyToStart = true;
+                }
 
                 //We found our command
                 toWrite = singleCommand.ExecuteCommand();
