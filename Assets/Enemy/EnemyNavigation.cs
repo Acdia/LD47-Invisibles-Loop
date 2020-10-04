@@ -31,6 +31,16 @@ public class EnemyNavigation : MonoBehaviour
     float currentSpeed = 0f;
     float timeLeftWaiting = 0f;
 
+    void Start()
+    {
+
+        if (PlayerPrefs.GetInt("Crossing", 0) == 0)
+        {
+
+            crossChance = 0;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -148,12 +158,14 @@ public class EnemyNavigation : MonoBehaviour
             acceptLastDestination = true;
         }
 
+        int c = 0;
+
         do
         {
 
-
+            c++;
             chosenOne = colls[Random.Range(0, colls.Length)];
-        } while (CheckContaining(chosenOne.transform.position) && !acceptLastDestination);
+        } while (CheckContaining(chosenOne.transform.position) && !acceptLastDestination && c < 10);
 
 
         Debug.Log(colls.Length);
