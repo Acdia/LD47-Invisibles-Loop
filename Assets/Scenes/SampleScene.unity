@@ -6366,6 +6366,7 @@ GameObject:
   - component: {fileID: 1100332282}
   - component: {fileID: 1100332281}
   - component: {fileID: 1100332287}
+  - component: {fileID: 1100332288}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6510,6 +6511,23 @@ MonoBehaviour:
     m_Bits: 4294967295
   cam: {fileID: 963194228}
   mainListener: {fileID: 963194226}
+--- !u!114 &1100332288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100332280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a64624a75ba604e8704df6d39d6d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EMPLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  distance: 25
+  cam: {fileID: 963194228}
 --- !u!1001 &1103963281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11807,6 +11825,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978374276}
     m_Modifications:
+    - target: {fileID: 4277270242509247013, guid: e33e12fa2634e7f47b1fbf7b54599dfc,
+        type: 3}
+      propertyPath: open
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4492732621221681997, guid: e33e12fa2634e7f47b1fbf7b54599dfc,
         type: 3}
       propertyPath: m_Name
