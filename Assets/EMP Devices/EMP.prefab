@@ -405,45 +405,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commands:
   - EMP: {fileID: 4277270242509247013}
-    command: cmd1
+    command: help
     identifierNumber: 0
     positiveActions:
-    - first command has been executed successfully
+    - 'Help menu:'
+    - login - log in with you username and password
+    - check  - checks the fuctionality of the EMP
+    - prepare - prepares the EMP (this might take some time)
+    - activate - activates the EMP; after activating all EMPs the can be started
+      with the big red button
+    - howto - tells how to use the electromagnetic sensing system
+    actionDelay: 0.2
+    conditions: 
+    negativeOutput:
+    - something went wrong
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
+  - EMP: {fileID: 4277270242509247013}
+    command: login
+    identifierNumber: 1
+    positiveActions:
+    - Enter your username...
     actionDelay: 0
     conditions: 
     negativeOutput:
-    - an error has shown up
+    - something went wrong
     executed: 0
     executing: 0
     isAnswer: 0
     questionNumber: 0
   - EMP: {fileID: 4277270242509247013}
-    command: cmd2
-    identifierNumber: 1
+    command: root
+    identifierNumber: 2
     positiveActions:
+    - Enter your password...
+    actionDelay: 0
+    conditions: 
+    negativeOutput:
+    - unknown command
+    executed: 0
+    executing: 0
+    isAnswer: 1
+    questionNumber: 1
+  - EMP: {fileID: 4277270242509247013}
+    command: '!sh3mb8h'
+    identifierNumber: 3
+    positiveActions:
+    - Login completed!
+    actionDelay: 0
+    conditions: 
+    negativeOutput:
+    - unknown command
+    executed: 0
+    executing: 0
+    isAnswer: 1
+    questionNumber: 2
+  - EMP: {fileID: 4277270242509247013}
+    command: check
+    identifierNumber: 4
+    positiveActions:
+    - Checking EMP...
     - 10%
     - 20%
     - 30%
+    - 40%
+    - 50%
+    - 60%
+    - 70%
+    - 80%
+    - 90%
+    - 100%
+    - Test completed! No problems found!
     actionDelay: 2
-    conditions: 00000000
+    conditions: 03000000
     negativeOutput:
-    - command couldn't be executed - make shure to first execute cmd1
+    - You don't have the permission to do that. Log in first!
     executed: 0
     executing: 0
     isAnswer: 0
     questionNumber: 0
   - EMP: {fileID: 4277270242509247013}
-    command: cmd3
-    identifierNumber: 2
+    command: prepare
+    identifierNumber: 5
     positiveActions:
-    - Ha lol it worked
-    - At least it seems so
-    actionDelay: 1
-    conditions: 0000000001000000
+    - Preparing EMP...
+    - 10%
+    - 20%
+    - 30%
+    - 40%
+    - 50%
+    - 60%
+    - 70%
+    - 80%
+    - 90%
+    - 100%
+    - EMP prepared! Activation from cosole required before usage.
+    actionDelay: 4
+    conditions: 04000000
     negativeOutput:
-    - error1
-    - error2
-    - error3
+    - Permission denied! Check the fuctionality first for a secure start!
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
+  - EMP: {fileID: 4277270242509247013}
+    command: activate
+    identifierNumber: 6
+    positiveActions:
+    - The EMP is activated!
+    - If all EMPs are activated you can start them from the red button in the middle
+      room.
+    actionDelay: 0
+    conditions: 05000000
+    negativeOutput:
+    - Activation failed. The EMP is not prepared!
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
+  - EMP: {fileID: 4277270242509247013}
+    command: howto
+    identifierNumber: 7
+    positiveActions:
+    - Guide for electromagnetic sensing system
+    - The elctromagnetic sensing system converts electromagnetic
+    - waves into hearable sound.
+    - Use the buttons in the middle room to hear the signals
+    - from different sensors.
+    - There is one in each middle path and 4 in the outer ring.
+    actionDelay: 0.2
+    conditions: 
+    negativeOutput: []
     executed: 0
     executing: 0
     isAnswer: 0
@@ -452,7 +546,7 @@ MonoBehaviour:
   inpField: {fileID: 6004780605864717610}
   canv: {fileID: 4381163113540760986}
   open: 0
-  overflow: 30
+  overflow: 20
 --- !u!1 &5229762915425113501
 GameObject:
   m_ObjectHideFlags: 0

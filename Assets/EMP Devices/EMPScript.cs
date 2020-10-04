@@ -55,7 +55,7 @@ public class EMPScript : MonoBehaviour
 
         open = true;
         canv.SetActive(true);
-        if(!currentlyWriting) inpField.ActivateInputField();
+        if(!currentlyWriting || toWrite.Length < 1) inpField.ActivateInputField(); //|| toWrite.Length < 1 is not necessarily needed but I had some bugs
     }
 
     public void GiveWrittenText(string theText)
@@ -79,6 +79,7 @@ public class EMPScript : MonoBehaviour
                 //We found our command
                 toWrite = singleCommand.ExecuteCommand();
                 currentDelay = singleCommand.actionDelay;
+                lastCommand = singleCommand.identifierNumber;
             }
         }
 
@@ -89,6 +90,7 @@ public class EMPScript : MonoBehaviour
             AddText("command not found");
             AddText(">");
             currentlyWriting = false;
+            lastCommand = -1;
             EnableUserWriting();
             return;
         }
