@@ -77,7 +77,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: C:/>
+  m_Text: 'Write help for help menu
+
+    >'
 --- !u!1 &2781043672501933331
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,10 +403,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8ff4cdbfb79754995379898353296c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commands:
+  - EMP: {fileID: 4277270242509247013}
+    command: cmd1
+    identifierNumber: 0
+    positiveActions:
+    - first command has been executed successfully
+    actionDelay: 0
+    conditions: 
+    negativeOutput:
+    - an error has shown up
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
+  - EMP: {fileID: 4277270242509247013}
+    command: cmd2
+    identifierNumber: 1
+    positiveActions:
+    - 10%
+    - 20%
+    - 30%
+    actionDelay: 2
+    conditions: 00000000
+    negativeOutput:
+    - command couldn't be executed - make shure to first execute cmd1
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
+  - EMP: {fileID: 4277270242509247013}
+    command: cmd3
+    identifierNumber: 2
+    positiveActions:
+    - Ha lol it worked
+    - At least it seems so
+    actionDelay: 1
+    conditions: 0000000001000000
+    negativeOutput:
+    - error1
+    - error2
+    - error3
+    executed: 0
+    executing: 0
+    isAnswer: 0
+    questionNumber: 0
   console: {fileID: 4025522194808486359}
   inpField: {fileID: 6004780605864717610}
   canv: {fileID: 4381163113540760986}
   open: 0
+  overflow: 30
 --- !u!1 &5229762915425113501
 GameObject:
   m_ObjectHideFlags: 0

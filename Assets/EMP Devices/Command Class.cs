@@ -1,4 +1,5 @@
-﻿public class CommandClass
+﻿[System.Serializable]
+public class CommandClass
 {
 
     public EMPScript EMP;
@@ -33,6 +34,7 @@
                 if(EMP.CheckLastCommand(questionNumber))
                 {
 
+                    executed = true;
                     return positiveActions;
                 }
                 else
@@ -42,6 +44,7 @@
                 }
             }
 
+            executed = true;
             return positiveActions;
         }
         else

@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class EMPScript : MonoBehaviour
 {
 
-    [SerializeField] CommandClass[] commands;
+
+    public CommandClass[] commands;
 
     [Space]
 
@@ -17,6 +18,12 @@ public class EMPScript : MonoBehaviour
     string currentText = "";
 
     public bool open = false;
+    [SerializeField] int overflow = 20;
+
+    bool currentlyWriting = false;
+    int textPosCounter = 0;
+    float currentDelay = 0f;
+    string[] toWrite;
 
     void Update()
     {
@@ -26,13 +33,13 @@ public class EMPScript : MonoBehaviour
         if(Input.GetButtonDown("Submit"))
         {
 
-            console.text = console.text + "\n" + currentText;
+            AddText(currentText);
 
             ExecuteCommand(currentText);
+            currentlyWriting = true;
 
             currentText = "";
             inpField.text = "";
-            inpField.ActivateInputField();
         }
 
         if(Input.GetButtonDown("Cancel"))
@@ -48,7 +55,7 @@ public class EMPScript : MonoBehaviour
 
         open = true;
         canv.SetActive(true);
-        inpField.ActivateInputField();
+        if(!currentlyWriting) inpField.ActivateInputField();
     }
 
     public void GiveWrittenText(string theText)
@@ -60,7 +67,9 @@ public class EMPScript : MonoBehaviour
     void ExecuteCommand(string command)
     {
 
-        foreach(CommandClass singleCommand in commands)
+        toWrite = new string[0];
+
+        foreach (CommandClass singleCommand in commands)
         {
 
             //Looking at each command
@@ -68,11 +77,69 @@ public class EMPScript : MonoBehaviour
             {
 
                 //We found our command
-                string[] toWrite = singleCommand.ExecuteCommand();
+                toWrite = singleCommand.ExecuteCommand();
+                currentDelay = singleCommand.actionDelay;
             }
         }
 
         //Print that the command wasn't found
+        if(toWrite.Length < 1)
+        {
+
+            AddText("command not found");
+            AddText(">");
+            currentlyWriting = false;
+            EnableUserWriting();
+            return;
+        }
+
+        textPosCounter = 0;
+        DoWriting();
+    }
+
+    void DoWriting()
+    {
+
+        if(textPosCounter >= toWrite.Length)
+        {
+
+            currentlyWriting = false;
+            AddText(">");
+            EnableUserWriting();
+            return;
+        }
+
+        AddText(toWrite[textPosCounter]);
+        textPosCounter++;
+
+        Invoke("DoWriting", currentDelay);
+    }
+
+    void EnableUserWriting()
+    {
+
+        inpField.ActivateInputField();
+    }
+
+    void AddText(string text)
+    {
+
+        while(console.text.Split('\n').Length > overflow)
+        {
+
+            //Thanks stackoverflow! :)
+            int index = console.text.IndexOf(System.Environment.NewLine);
+            console.text = console.text.Substring(index + System.Environment.NewLine.Length);
+        }
+
+        if(text == ">")
+        {
+
+            console.text = console.text + text;
+            return;
+        }
+
+        console.text = console.text + text + "\n";
     }
 
     public bool CheckForCommands(int[] numbersNeeded)
