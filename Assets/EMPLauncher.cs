@@ -30,7 +30,7 @@ public class EMPLauncher : MonoBehaviour
                     {
 
                         UIActivateFirst.SetActive(true);
-                        Invoke("DisableUI", 10f);
+                        Invoke("DisableUI", 5f);
                         return;
                     }
                 }

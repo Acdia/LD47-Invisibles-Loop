@@ -542,6 +542,8 @@ MonoBehaviour:
     executing: 0
     isAnswer: 0
     questionNumber: 0
+  readyToStart: 0
+  numToFinish: 6
   console: {fileID: 4025522194808486359}
   inpField: {fileID: 6004780605864717610}
   canv: {fileID: 4381163113540760986}
