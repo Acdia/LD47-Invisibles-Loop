@@ -63,11 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CmdTable\ButtonScript.cs" />
+    <Compile Include="Assets\DeathScript.cs" />
     <Compile Include="Assets\EMP Devices\Command Class.cs" />
     <Compile Include="Assets\EMP Devices\EMPCommandPushScript.cs" />
     <Compile Include="Assets\EMP Devices\EMPScript.cs" />
     <Compile Include="Assets\Enemy\EnemyNavigation.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
+    <Compile Include="Assets\EnemyAttack.cs" />
     <Compile Include="Assets\Player\EMPConfigScript.cs" />
     <Compile Include="Assets\Player\ListeningScript.cs" />
     <Compile Include="Assets\Player\MainMovement.cs" />

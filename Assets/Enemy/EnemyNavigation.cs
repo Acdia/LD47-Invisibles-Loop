@@ -20,7 +20,6 @@ public class EnemyNavigation : MonoBehaviour
     [SerializeField] int maxSteps = 10;
     [SerializeField] float crossChance = 0.35f;
     [SerializeField] float maxSpeed = 15f;
-    [SerializeField] float attackSpeed = 50f;
 
     Transform currentDestination;
     bool doingStuff = false;
@@ -164,28 +163,24 @@ public class EnemyNavigation : MonoBehaviour
         {
 
             currentDestination = south.transform;
-            Debug.Log("south");
             return;
         }
         if (currentDestination == south.transform)
         {
 
             currentDestination = north.transform;
-            Debug.Log("north");
             return;
         }
         if (currentDestination == east.transform)
         {
 
             currentDestination = west.transform;
-            Debug.Log("west");
             return;
         }
         if (currentDestination == west.transform)
         {
 
             currentDestination = east.transform;
-            Debug.Log("east");
             return;
         }
 
