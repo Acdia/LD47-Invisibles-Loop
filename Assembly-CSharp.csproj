@@ -70,6 +70,7 @@
     <Compile Include="Assets\Enemy\EnemyNavigation.cs" />
     <Compile Include="Assets\Enemy\EnemyScript.cs" />
     <Compile Include="Assets\EnemyAttack.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Player\EMPConfigScript.cs" />
     <Compile Include="Assets\Player\ListeningScript.cs" />
     <Compile Include="Assets\Player\MainMovement.cs" />
